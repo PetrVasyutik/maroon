@@ -1,0 +1,25 @@
+.slider {
+  width: 100%;
+  margin: 0;
+}
+
+.slider__item {
+  height: 312px;
+  width: 230px;
+}
+
+.slider__button-container {
+  position: relative;
+  height: 38px;
+  width: 100px;
+  margin-left: calc(100% - 500px);
+
+  @include vp-1199 {
+    margin-left: calc(100% - 364px);
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+

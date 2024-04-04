@@ -1,0 +1,273 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 98px;
+  border-bottom: 1px solid $color-hawkes-blue;
+  width: 100%;
+  min-width: 320px;
+
+  @include vp-1199 {
+    padding: 40px 45px;
+  }
+
+  @include vp-767 {
+    padding: 28px 15px;
+  }
+}
+
+.header-trancparent {
+  background: transparent;
+  border-color: transparent;
+}
+
+.header_colored {
+  background: $color-default-white;
+  border-color: $color-hawkes-blue;
+}
+
+.header__menu-button {
+  background: url("../img/svg/burger-icon.svg") no-repeat left center/24px 12px transparent;
+  display: none;
+  padding: 0;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
+  outline: 0;
+  flex-shrink: 0;
+
+  @include vp-1199 {
+    display: block;
+    height: 18px;
+    width: 24px;
+    margin-right: 40px;
+  }
+
+  @include vp-767 {
+    height: 14px;
+    width: 22px;
+    margin-right: 26px;
+    background-size: 22px 11px;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    opacity: 0.5;
+    transition: 0.2s;
+  }
+}
+
+.header__menu-button_active {
+  background: url("../img/svg/cross-icon.svg") no-repeat 0 0/18px 18px;
+}
+
+@media (max-width: 767px) {
+  .header__menu-button_active {
+    background-size: 14px 14px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  width: 131px;
+  height: 21px;
+
+  @include vp-767 {
+    width: 85px;
+    height: 13px;
+  }
+}
+
+.header__navigation {
+  flex-grow: 1;
+}
+
+.header__actions {
+  margin: 0 0 0 51px;
+  padding: 0;
+
+  @include vp-1199{
+    margin: 0;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+
+  @include vp-1199 {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: translateY(100%);
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.15s opacity;
+  }
+}
+
+.navigation_open {
+  @include vp-1199 {
+    display: flex;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @include vp-767 {
+    height: calc(100vh - 75px);
+  }
+}
+
+.navigation__overlay {
+  @include vp-1199 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.navigation__content {
+  @include vp-1199 {
+    z-index: 15;
+    background-color: $color-default-white;
+    box-shadow: 0 4px 30px rgba(214, 214, 214, 0.19);
+  }
+}
+
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include vp-1199 {
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 0;
+  }
+  @include vp-767 {
+    padding: 40px 0;
+  }
+}
+
+.navigation__item {
+  margin-bottom: 10px;
+
+  @include vp-1199 {
+    padding: 20px 45px;
+  }
+
+  @include vp-767 {
+    padding: 0 15px;
+  }
+
+  & + & {
+    @include vp-767 {
+      margin-top: 35px;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-left: 37px;
+
+    @include vp-1199 {
+      margin-left: 0;
+    }
+  }
+}
+
+.navigation__link {
+  font-family: $ff-text;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  display: inline-block;
+  color: $color-midnight;
+
+  @include vp-1199 {
+    font-family: $ff-title;
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  @include vp-767 {
+    font-size: 28px;
+  }
+}
+
+.social-header {
+  display: flex;
+  align-items: center;
+}
+
+.social_for-menu {
+  display: none;
+
+  @include vp-1199 {
+    display: flex;
+    padding: 10px 45px 61px;
+  }
+
+  @include vp-767 {
+    padding: 10px 15px 50px;
+  }
+}
+
+.social-header__item {
+  max-width: 20px;
+}
+
+.social-header__item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.social-header__item_minor-spaced:not(:first-child) {
+  margin-left: 25px;
+
+  @include vp-767 {
+    margin-left: 30px;
+  }
+}
+
+.social-header__link {
+  display: flex;
+}
+
+.user-actions {
+  display: flex;
+}
+
+.user-actions__item:not(:first-child) {
+    margin-left: 35px;
+    margin-bottom: 10px;
+
+  @include vp-767 {
+    margin-left: 20px;
+  }
+}
+
+.user-actions__cart {
+  display: flex;
+  width: 14px;
+  height: 16px;
+}
+
+.user-actions__user {
+  display: flex;
+  width: 13px;
+  height: 16px;
+}
+
+

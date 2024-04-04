@@ -1,0 +1,73 @@
+.history {
+  position: relative;
+  margin-bottom: 140px;
+  background-color: $color-desert-storm;
+  background-image: url("../img/history@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 433px;
+  display: flex;
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+    (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: url("../img/history@2x.jpg");
+  }
+
+  @media (max-width: 1199px) {
+    margin-bottom: 120px;
+    min-height: 393px;
+    background-position: center bottom;
+    background-image: url("../img/history-lap@1x.jpg");
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 73px;
+    min-height: 346px;
+    background-image: url("../img/history-mob@1x.jpg");
+    padding-bottom: 56px;
+  }
+}
+
+.history__description {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.history__text {
+  margin: 0 auto;
+  max-width: 680px;
+  font-size: 32px;
+  line-height: 1.25;
+  padding-top: 86px;
+
+  @include vp-1199 {
+    padding-left: 41px;
+    padding-right: 41px;
+    padding-top: 91px;
+    max-width: 100%;
+  }
+
+  @include vp-767 {
+    font-size: 22px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 56px;
+  }
+}
+
+.history__link {
+  margin-top: 24px;
+
+  @include vp-1199 {
+    margin-top: 36px;
+  }
+
+  @include vp-767 {
+    margin-top: 22px;
+    padding: 9px 27px;
+    font-size: 14px;
+  }
+}

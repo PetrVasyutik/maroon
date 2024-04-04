@@ -1,0 +1,142 @@
+.about {
+  background: url("../img/main@1x.jpg") no-repeat 0 0/cover #ffffff;
+  padding: 131px 0 64px;
+  margin-bottom: 140px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi),
+  (min-resolution: 1.5dppx) {
+  .about {
+    background-image: url("../img/main@2x.jpg");
+  }
+}
+
+@media (max-width: 1199px) {
+  .about {
+    padding-bottom: 66px;
+    background-image: url("../img/main-lap@1x.jpg");
+    margin-bottom: 118px;
+  }
+}
+
+@media (max-width: 1199px) and (-webkit-min-device-pixel-ratio: 1.5),
+  (max-width: 1199px) and (min-resolution: 144dpi),
+  (max-width: 1199px) and (min-resolution: 1.5dppx) {
+  .about {
+    background-image: url("../img/main-lap@2x.jpg");
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    padding: 97px 0 55px;
+    background-image: url("../img/main-mob@1x.jpg");
+    margin-bottom: 26px;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5),
+  (max-width: 767px) and (min-resolution: 144dpi),
+  (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .about {
+    background-image: url("../img/main-mob@2x.jpg");
+  }
+}
+
+.about__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1170px;
+
+  @include vp-1199 {
+    justify-content: space-between;
+  }
+
+  @include vp-767 {
+    flex-wrap: wrap;
+  }
+}
+
+.about__item {
+  width: 330px;
+  min-width: 330px;
+
+  @include vp-1199 {
+    width: 36%;
+    min-width: 0;
+  }
+
+  @include vp-767 {
+    width: calc((100% - 30px) / 2);
+    min-width: 130px;
+  }
+
+  &:nth-child(2) {
+    order: -1;
+
+    @include vp-767 {
+      order: 0;
+    }
+  }
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+  min-width: 330px;
+  margin: 0 20px;
+
+  @include vp-1199 {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: 275px;
+    min-width: 275px;
+    z-index: 2;
+  }
+
+  @include vp-767 {
+    position: static;
+    width: 100%;
+    margin: 0 0 35px;
+    transform: none;
+  }
+}
+
+.about__description {
+  font-size: 18px;
+  line-height: 1.45;
+  text-align: center;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+.about__title {
+  margin: 47px 0 10px;
+
+  @include vp-1199 {
+    margin: -10px 0 10px;
+  }
+
+  @include vp-767 {
+    margin: 0 0 5px;
+  }
+}
+
+.about__btn {
+  margin: 33px auto 0;
+
+  @include vp-767 {
+    margin-top: 23px;
+    padding: 9px 23px;
+  }
+}
